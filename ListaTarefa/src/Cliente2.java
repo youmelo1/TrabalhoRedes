@@ -2,12 +2,9 @@
 import java.io.*;
 import java.net.*;
 
-public class Cliente {
+public class Cliente2 {
 
 	public static void main(String argv[]) throws Exception {
-
-		
-
 		boolean flag = true;
 		while (flag) {
 			String entrada;
@@ -20,14 +17,13 @@ public class Cliente {
 
 			respostaServ = doServidor.readLine();
 
-			String[] x = new String[3];
-			x = respostaServ.split(";");
-			for (int i = 0; i < x.length; i++) {
-				if (x[i] != null) {
-					System.out.println(x[i]);
-				}
-			}
-			System.out.println();
+			String[] x = respostaServ.split(";");
+                for (String s : x) {
+                    if (s != null) {
+                        System.out.println(s);
+                    }
+                }
+                System.out.println();
 
 			/////////////// Escolha de opcao /////////////////////////////
 
@@ -54,14 +50,13 @@ public class Cliente {
 				doServidor = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
 				respostaServ = doServidor.readLine();
 
-				String[] lista = new String[10];
-				lista = respostaServ.split(";");
-				for (int i = 0; i < lista.length; i++) {
-					if (lista[i] != null) {
-						System.out.println(lista[i]);
-					}
-				}
-				System.out.println();
+				String[] lista = respostaServ.split(";");
+                    for (String s : lista) {
+                        if (s != null) {
+                            System.out.println(s);
+                        }
+                    }
+                    System.out.println();
 			//////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -73,14 +68,14 @@ public class Cliente {
 
 				doServidor = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
 				respostaServ = doServidor.readLine();
-				String[] lista = new String[10];
-				lista = respostaServ.split(";");
-				for (int i = 0; i < lista.length; i++) {
-					if (lista[i] != null) {
-						System.out.println(lista[i]);
-					}
-				}
-				System.out.println();
+				
+				String[] lista = respostaServ.split(";");
+                    for (String s : lista) {
+                        if (s != null) {
+                            System.out.println(s);
+                        }
+                    }
+                    System.out.println();
 
 				entrada = doUsuario.readLine();
 				paraServidor.writeBytes(entrada + '\n');
