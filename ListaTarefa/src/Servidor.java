@@ -33,7 +33,7 @@ class ClienteHandler implements Runnable {
             BufferedReader doCliente = new BufferedReader(new InputStreamReader(socketConexao.getInputStream()));
             DataOutputStream paraCliente = new DataOutputStream(socketConexao.getOutputStream());
 
-            paraCliente.writeBytes("1) Adicionar item na lista;2) Mostrar lista;3) Remover item da lista" + '\n');
+            paraCliente.writeBytes("1) Adicionar item na lista;2) Mostrar lista;3) Remover item da lista;0) Sair da aplicacao" + '\n');
 
             String resposta = doCliente.readLine();
 
